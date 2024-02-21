@@ -97,7 +97,7 @@ class Contact extends Model
     {
         parent::__construct($attributes);
 
-        $this->table = config('lecturize.contacts.table', 'contacts');
+        $this->table = config('jonesrussell.contacts.table', 'contacts');
         $this->updateFillables();
     }
 
@@ -117,7 +117,7 @@ class Contact extends Model
     private function updateFillables(): void
     {
         $fillable = $this->fillable;
-        $columns  = preg_filter('/^/', 'is_', config('lecturize.contacts.flags', ['public', 'primary']));
+        $columns  = preg_filter('/^/', 'is_', config('jonesrussell.contacts.flags', ['public', 'primary']));
 
         $this->fillable(array_merge($fillable, $columns));
     }
@@ -129,12 +129,12 @@ class Contact extends Model
 
     public function address(): BelongsTo
     {
-        return $this->belongsTo(config('lecturize.addresses.model', Address::class));
+        return $this->belongsTo(config('jonesrussell.addresses.model', Address::class));
     }
 
     public static function getValidationRules(): array
     {
-        return config('lecturize.contacts.rules', []);
+        return config('jonesrussell.contacts.rules', []);
     }
 
     public function getFullNameAttribute(?bool $with_salutation = null, ?bool $with_titles = null, ?bool $with_name_reversed = null): string

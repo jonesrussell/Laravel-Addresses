@@ -23,8 +23,8 @@ class AddUuidToAddressesAndContactsTable extends Migration
      */
     public function __construct()
     {
-        $this->table_addresses = config('lecturize.addresses.table', 'addresses');
-        $this->table_contacts  = config('lecturize.contacts.table',  'contacts');
+        $this->table_addresses = config('jonesrussell.addresses.table', 'addresses');
+        $this->table_contacts  = config('jonesrussell.contacts.table',  'contacts');
     }
 
     /**

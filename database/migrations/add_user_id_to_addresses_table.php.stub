@@ -23,8 +23,8 @@ class AddUserIdToAddressesTable extends Migration
      */
     public function __construct()
     {
-        $this->table       = config('lecturize.addresses.table',   'addresses');
-        $this->table_users = config('lecturize.tables.users.main', 'users');
+        $this->table       = config('jonesrussell.addresses.table',   'addresses');
+        $this->table_users = config('jonesrussell.tables.users.main', 'users');
     }
 
     /**

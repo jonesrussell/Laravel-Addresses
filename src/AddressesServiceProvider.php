@@ -54,9 +54,9 @@ class AddressesServiceProvider extends ServiceProvider
     {
         $configPath = __DIR__ . '/../config/config.php';
 
-        $this->publishes([$configPath => config_path('lecturize.php')]);
+        $this->publishes([$configPath => config_path('jonesrussell.php')]);
 
-        $this->mergeConfigFrom($configPath, 'lecturize');
+        $this->mergeConfigFrom($configPath, 'jonesrussell');
     }
 
     private function handleMigrations(): void

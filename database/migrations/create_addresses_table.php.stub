@@ -21,7 +21,7 @@ class CreateAddressesTable extends Migration
      */
     public function __construct()
     {
-        $this->table = config('lecturize.addresses.table', 'addresses');
+        $this->table = config('jonesrussell.addresses.table', 'addresses');
     }
 
     /**
@@ -49,7 +49,7 @@ class CreateAddressesTable extends Migration
 
             $table->nullableMorphs('addressable');
 
-            foreach(config('lecturize.addresses.flags', ['public', 'primary', 'billing', 'shipping']) as $flag) {
+            foreach(config('jonesrussell.addresses.flags', ['public', 'primary', 'billing', 'shipping']) as $flag) {
                 $table->boolean('is_'. $flag)->default(false)->index();
             }
 

@@ -22,7 +22,7 @@ trait HasAddresses
     public function addresses(): MorphMany
     {
         /** @var Model $this */
-        return $this->morphMany(config('lecturize.addresses.model', Address::class), 'addressable');
+        return $this->morphMany(config('jonesrussell.addresses.model', Address::class), 'addressable');
     }
 
     public function hasAddresses(): bool
@@ -80,10 +80,10 @@ trait HasAddresses
             }
 
             /**
-             * use the array order of config lecturize.addresses.flags to build up
+             * use the array order of config jonesrussell.addresses.flags to build up
              * a fallback solution for when no address with the given flag exists
              */
-            $fallback_order = config('lecturize.addresses.flags', []);
+            $fallback_order = config('jonesrussell.addresses.flags', []);
 
             /**
              * fallback order is an array of flags like: ['public', 'primary', 'billing', 'shipping']
@@ -163,7 +163,7 @@ trait HasAddresses
 
     function validateAddress(array $attributes): Validator
     {
-        $model = config('lecturize.addresses.model', Address::class);
+        $model = config('jonesrussell.addresses.model', Address::class);
         $rules = (new $model)->getValidationRules();
 
         return validator($attributes, $rules);

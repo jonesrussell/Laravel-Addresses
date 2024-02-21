@@ -10,7 +10,7 @@ return new class extends Migration
 
     public function __construct()
     {
-        $this->table = config('lecturize.addresses.table', 'addresses');
+        $this->table = config('jonesrussell.addresses.table', 'addresses');
     }
 
     public function up(): void

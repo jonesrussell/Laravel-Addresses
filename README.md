@@ -1,6 +1,6 @@
-[![Latest Stable Version](https://poser.pugx.org/lecturize/laravel-addresses/v/stable)](https://packagist.org/packages/lecturize/laravel-addresses)
-[![Total Downloads](https://poser.pugx.org/lecturize/laravel-addresses/downloads)](https://packagist.org/packages/lecturize/laravel-addresses)
-[![License](https://poser.pugx.org/lecturize/laravel-addresses/license)](https://packagist.org/packages/lecturize/laravel-addresses)
+[![Latest Stable Version](https://poser.pugx.org/jonesrussell/laravel-addresses/v/stable)](https://packagist.org/packages/jonesrussell/laravel-addresses)
+[![Total Downloads](https://poser.pugx.org/jonesrussell/laravel-addresses/downloads)](https://packagist.org/packages/jonesrussell/laravel-addresses)
+[![License](https://poser.pugx.org/jonesrussell/laravel-addresses/license)](https://packagist.org/packages/jonesrussell/laravel-addresses)
 
 # Laravel Addresses
 
@@ -12,11 +12,11 @@ Require the package from your `composer.json` file
 
 ```php
 "require": {
-	"lecturize/laravel-addresses": "^1.1"
+	"jonesrussell/laravel-addresses": "^1.1"
 }
 ```
 
-and run `$ composer update` or both in one with `$ composer require lecturize/laravel-addresses`.
+and run `$ composer update` or both in one with `$ composer require jonesrussell/laravel-addresses`.
 
 ## Configuration & Migration
 
@@ -24,7 +24,7 @@ and run `$ composer update` or both in one with `$ composer require lecturize/la
 $ php artisan vendor:publish --provider="Jonesrussell\Addresses\AddressesServiceProvider"
 ```
 
-This will publish the config file to `config/lecturize.php` and some migration files, that you'll have to run:
+This will publish the config file to `config/jonesrussell.php` and some migration files, that you'll have to run:
 
 ```bash
 $ php artisan migrate
@@ -149,7 +149,7 @@ $post->addContact([
 Above all, `addresses` and `contacts` can be connected with an optional One To Many relationship. Like so you could assign multiple contacts to an address and retrieve them like so:
 
 ```php
-$address = config('lecturize.addresses.model', \Jonesrussell\Addresses\Models\Address::class)::find(1);
+$address = config('jonesrussell.addresses.model', \Jonesrussell\Addresses\Models\Address::class)::find(1);
 $contacts = $address->contacts;
 
 foreach ($contacts as $contact) {
@@ -158,20 +158,20 @@ foreach ($contacts as $contact) {
 ```
 
 ```php
-$contact = config('lecturize.contacts.model', \Jonesrussell\Addresses\Models\Contact::class)::find(1)
+$contact = config('jonesrussell.contacts.model', \Jonesrussell\Addresses\Models\Contact::class)::find(1)
                   ->contacts()
                   ->first();
 ```
 
 ```php
-$contact = config('lecturize.contacts.model', \Jonesrussell\Addresses\Models\Contact::class)::find(1);
+$contact = config('jonesrussell.contacts.model', \Jonesrussell\Addresses\Models\Contact::class)::find(1);
 
 return $contact->address->getHtml();
 ```
 
 ##### Geocoding
 
-The address model provides a method `geocode()` which will try to fetch longitude and latitude through the Google Maps API. Please make sure to add your key within the services config file at `services.google.maps.key`. If you set the option `lecturize.addresses.geocode` to `true`, the package will automatically fire the `geocode()` method whenever an addresses model is saved (precisely we hook into the `saving` event).
+The address model provides a method `geocode()` which will try to fetch longitude and latitude through the Google Maps API. Please make sure to add your key within the services config file at `services.google.maps.key`. If you set the option `jonesrussell.addresses.geocode` to `true`, the package will automatically fire the `geocode()` method whenever an addresses model is saved (precisely we hook into the `saving` event).
 
 ## Changelog
 

@@ -121,7 +121,7 @@ class Address extends Model
     {
         parent::__construct($attributes);
 
-        $this->table = config('lecturize.addresses.table', 'addresses');
+        $this->table = config('jonesrussell.addresses.table', 'addresses');
         $this->updateFillables();
     }
 
@@ -138,7 +138,7 @@ class Address extends Model
         });
 
         static::saving(function($address) {
-            if (config('lecturize.addresses.geocode', false))
+            if (config('jonesrussell.addresses.geocode', false))
                 $address->geocode();
         });
     }
@@ -146,7 +146,7 @@ class Address extends Model
     private function updateFillables(): void
     {
         $fillable = $this->fillable;
-        $columns  = preg_filter('/^/', 'is_', config('lecturize.addresses.flags', ['public', 'primary', 'billing', 'shipping']));
+        $columns  = preg_filter('/^/', 'is_', config('jonesrussell.addresses.flags', ['public', 'primary', 'billing', 'shipping']));
 
         $this->fillable(array_merge($fillable, $columns));
     }
@@ -158,17 +158,17 @@ class Address extends Model
 
     public function contacts(): HasMany
     {
-        return $this->hasMany(config('lecturize.contacts.model', Contact::class));
+        return $this->hasMany(config('jonesrussell.contacts.model', Contact::class));
     }
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('lecturize.addresses.users.model', config('auth.providers.users.model', 'App\Models\Users\User')));
+        return $this->belongsTo(config('jonesrussell.addresses.users.model', config('auth.providers.users.model', 'App\Models\Users\User')));
     }
 
     public static function getValidationRules(): array
     {
-        $rules = config('lecturize.addresses.rules', [
+        $rules = config('jonesrussell.addresses.rules', [
             'street'       => 'required|string|min:3|max:60',
             'street_extra' => 'nullable|string|min:3|max:60',
             'city'         => 'required|string|min:3|max:60',
@@ -177,7 +177,7 @@ class Address extends Model
             'country_id'   => 'required|integer',
         ]);
 
-        foreach (config('lecturize.addresses.flags', ['public', 'primary', 'billing', 'shipping']) as $flag)
+        foreach (config('jonesrussell.addresses.flags', ['public', 'primary', 'billing', 'shipping']) as $flag)
             $rules['is_'.$flag] = 'boolean';
 
         return $rules;

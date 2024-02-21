@@ -21,7 +21,7 @@ trait HasContacts
     public function contacts(): MorphMany
     {
         /** @var Model $this */
-        return $this->morphMany(config('lecturize.contacts.model', Contact::class), 'contactable');
+        return $this->morphMany(config('jonesrussell.contacts.model', Contact::class), 'contactable');
     }
 
     public function hasContacts(): bool
@@ -77,7 +77,7 @@ trait HasContacts
 
     function validateContact(array $attributes): Validator
     {
-        $rules = config('lecturize.contacts.model', Contact::class)::getValidationRules();
+        $rules = config('jonesrussell.contacts.model', Contact::class)::getValidationRules();
 
         return validator($attributes, $rules);
     }
@@ -105,10 +105,10 @@ trait HasContacts
             }
 
             /**
-             * use the array order of config lecturize.contacts.flags to build up
+             * use the array order of config jonesrussell.contacts.flags to build up
              * a fallback solution for when no contact with the given flag exists
              */
-            $fallback_order = config('lecturize.contacts.flags', []);
+            $fallback_order = config('jonesrussell.contacts.flags', []);
 
             /**
              * fallback order is an array of flags like: ['public', 'primary', 'billing', 'shipping']
