@@ -1,11 +1,11 @@
 {
-    "name": "lecturize/laravel-addresses",
+    "name": "jonesrussell/laravel-addresses",
     "description": "Simple address and contact management for Laravel.",
-    "homepage": "https://github.com/Lecturize/Laravel-Addresses",
+    "homepage": "https://github.com/jonesrussell/Laravel-Addresses",
     "license": "MIT",
     "type": "library",
     "keywords": [
-        "lecturize",
+        "jonesrussell",
         "addresses",
         "contacts",
         "laravel"
@@ -14,15 +14,20 @@
         {
             "name": "Alexander Manfred Poellmann",
             "homepage": "https://twitter.com/AMPoellmann",
-            "role": "developer"
+            "role": "original author"
+        },
+        {
+            "name": "Russell Jones",
+            "homepage": "https://github.com/jonesrussell",
+            "role": "maintainer"
         }
     ],
     "require": {
         "php": "^8.0",
         "ext-json": "*",
+        "calebporzio/sushi": "^2.2",
         "illuminate/database": "^9.0|^10.0",
         "illuminate/support": "^9.0|^10.0",
-        "webpatser/laravel-countries": "^1.5",
         "webpatser/laravel-uuid": "^3.0|^4.0"
     },
     "require-dev": {
@@ -32,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Lecturize\\Addresses\\": "src"
+            "Jonesrussell\\Addresses\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lecturize\\Addresses\\Test\\": "tests"
+            "Jonesrussell\\Addresses\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -51,10 +56,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lecturize\\Addresses\\AddressesServiceProvider"
+                "Jonesrussell\\Addresses\\AddressesServiceProvider"
             ],
             "aliases": {
-                "Address": "Lecturize\\Addresses\\Facades\\Address"
+                "Address": "Jonesrussell\\Addresses\\Facades\\Address"
             }
         },
         "branch-alias": {
@@ -62,7 +67,7 @@
         }
     },
     "support": {
-        "source": "https://github.com/Lecturize/Laravel-Addresses",
-        "issues": "https://github.com/Lecturize/Laravel-Addresses/issues"
+        "source": "https://github.com/jonesrussell/Laravel-Addresses",
+        "issues": "https://github.com/jonesrussell/Laravel-Addresses/issues"
     }
 }

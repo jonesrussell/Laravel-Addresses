@@ -27,13 +27,8 @@ $ php artisan vendor:publish --provider="Lecturize\Addresses\AddressesServicePro
 This will publish the config file to `config/lecturize.php` and some migration files, that you'll have to run:
 
 ```bash
-$ php artisan countries:migration
 $ php artisan migrate
 ```
-
-For migrations to be properly published ensure that you have added the directory `database/migrations` to the classmap in your projects `composer.json`.
-
-Check out [Webpatser\Countries](https://github.com/webpatser/laravel-countries) readme to see how to seed their countries data to your database.
 
 ## Usage
 
