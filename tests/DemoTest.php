@@ -2,9 +2,11 @@
 
 namespace Jonesrussell\Addresses\Tests;
 
-class DemoTest extends TestCase
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
+
+class DemoTest extends OrchestraTestCase
 {
-    public function true_is_true()
+    public function test_true_is_true()
     {
         $this->assertTrue(true);
     }

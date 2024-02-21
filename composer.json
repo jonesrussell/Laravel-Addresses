@@ -46,9 +46,8 @@
         }
     },
     "scripts": {
-        "addresses": "vendor/bin/phpunit",
-        "addresses-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
+        "addresses": "vendor/bin/phpunit tests",
+        "addresses-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html coverage tests"
     },
     "config": {
         "sort-packages": true
@@ -61,9 +60,6 @@
             "aliases": {
                 "Address": "Jonesrussell\\Addresses\\Facades\\Address"
             }
-        },
-        "branch-alias": {
-            "dev-master": "1.2.x-dev"
         }
     },
     "support": {
