@@ -11,12 +11,20 @@ Simple address and contact management for Laravel with automatical geocoding to 
 Require the package from your `composer.json` file
 
 ```php
+"repositories": [
+    ...
+    {
+        "type": "vcs",
+        "url": "https://github.com/jonesrussell/laravel-addresses"
+    }
+],
 "require": {
-	"jonesrussell/laravel-addresses": "^1.1"
+    ...
+	"jonesrussell/laravel-addresses": "dev-master"
 }
 ```
 
-and run `$ composer update` or both in one with `$ composer require jonesrussell/laravel-addresses`.
+and run `$ composer update`.
 
 ## Configuration & Migration
 
@@ -33,7 +41,7 @@ $ php artisan migrate
 ## Usage
 
 First, add our `HasAddresses` trait to your model.
-        
+
 ```php
 <?php namespace App\Models;
 
@@ -50,6 +58,7 @@ class Post extends Model
 ```
 
 ##### Add an Address to a Model
+
 ```php
 $post = Post::find(1);
 $post->addAddress([
@@ -77,6 +86,7 @@ $post->addAddress($address);
 Available attributes are `street`, `street_extra`, `city`, `post_code`, `state`, `country`, `state`, `notes` (for internal use). You can also use custom flags like `is_primary`, `is_billing` & `is_shipping`. Optionally you could also pass `lng` and `lat`, in case you deactivated the included geocoding functionality and want to add them yourself.
 
 ##### Check if Model has Addresses
+
 ```php
 if ($post->hasAddresses()) {
     // Do something
@@ -84,11 +94,13 @@ if ($post->hasAddresses()) {
 ```
 
 ##### Get all Addresses for a Model
+
 ```php
 $addresses = $post->addresses()->get();
 ```
 
 ##### Get primary/billing/shipping Addresses
+
 ```php
 $address = $post->getPrimaryAddress();
 $address = $post->getBillingAddress();
@@ -96,6 +108,7 @@ $address = $post->getShippingAddress();
 ```
 
 ##### Update an Address for a Model
+
 ```php
 $address = $post->addresses()->first(); // fetch the address
 
@@ -103,6 +116,7 @@ $post->updateAddress($address, $new_attributes);
 ```
 
 ##### Delete an Address from a Model
+
 ```php
 $address = $post->addresses()->first(); // fetch the address
 
@@ -110,6 +124,7 @@ $post->deleteAddress($address); // delete by passing it as argument
 ```
 
 ##### Delete all Addresses from a Model
+
 ```php
 $post->flushAddresses();
 ```
