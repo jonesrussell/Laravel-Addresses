@@ -1,6 +1,6 @@
 <?php
 
-namespace Lecturize\Addresses\Helpers;
+namespace Jonesrussell\Addresses\Helpers;
 
 class NameGenerator
 {

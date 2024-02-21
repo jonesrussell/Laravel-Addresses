@@ -1,8 +1,8 @@
 <?php
 
-namespace Lecturize\Addresses\Tests;
+namespace Jonesrussell\Addresses\Tests;
 
-use Lecturize\Addresses\AddressesServiceProvider;
+use Jonesrussell\Addresses\AddressesServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

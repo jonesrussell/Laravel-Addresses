@@ -1,10 +1,10 @@
 <?php
 
-namespace Lecturize\Addresses\Http\Resources;
+namespace Jonesrussell\Addresses\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Lecturize\Addresses\Models\Country;
+use Jonesrussell\Addresses\Models\Country;
 
 /** @mixin Country */
 class CountryResource extends JsonResource

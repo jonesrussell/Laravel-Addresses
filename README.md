@@ -21,7 +21,7 @@ and run `$ composer update` or both in one with `$ composer require lecturize/la
 ## Configuration & Migration
 
 ```bash
-$ php artisan vendor:publish --provider="Lecturize\Addresses\AddressesServiceProvider"
+$ php artisan vendor:publish --provider="Jonesrussell\Addresses\AddressesServiceProvider"
 ```
 
 This will publish the config file to `config/lecturize.php` and some migration files, that you'll have to run:
@@ -37,7 +37,7 @@ First, add our `HasAddresses` trait to your model.
 ```php
 <?php namespace App\Models;
 
-use Lecturize\Addresses\Traits\HasAddresses;
+use Jonesrussell\Addresses\Traits\HasAddresses;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -121,7 +121,7 @@ First, add our `HasContacts` trait to your model.
 ```php
 <?php namespace App\Models;
 
-use Lecturize\Addresses\Traits\HasContacts;
+use Jonesrussell\Addresses\Traits\HasContacts;
 use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
@@ -149,7 +149,7 @@ $post->addContact([
 Above all, `addresses` and `contacts` can be connected with an optional One To Many relationship. Like so you could assign multiple contacts to an address and retrieve them like so:
 
 ```php
-$address = config('lecturize.addresses.model', \Lecturize\Addresses\Models\Address::class)::find(1);
+$address = config('lecturize.addresses.model', \Jonesrussell\Addresses\Models\Address::class)::find(1);
 $contacts = $address->contacts;
 
 foreach ($contacts as $contact) {
@@ -158,13 +158,13 @@ foreach ($contacts as $contact) {
 ```
 
 ```php
-$contact = config('lecturize.contacts.model', \Lecturize\Addresses\Models\Contact::class)::find(1)
+$contact = config('lecturize.contacts.model', \Jonesrussell\Addresses\Models\Contact::class)::find(1)
                   ->contacts()
                   ->first();
 ```
 
 ```php
-$contact = config('lecturize.contacts.model', \Lecturize\Addresses\Models\Contact::class)::find(1);
+$contact = config('lecturize.contacts.model', \Jonesrussell\Addresses\Models\Contact::class)::find(1);
 
 return $contact->address->getHtml();
 ```

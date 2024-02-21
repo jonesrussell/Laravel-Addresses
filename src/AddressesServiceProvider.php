@@ -1,12 +1,12 @@
 <?php
 
-namespace Lecturize\Addresses;
+namespace Jonesrussell\Addresses;
 
 use Illuminate\Support\ServiceProvider;
 
 /**
  * Class AddressesServiceProvider
- * @package Lecturize\Addresses
+ * @package Jonesrussell\Addresses
  */
 class AddressesServiceProvider extends ServiceProvider
 {

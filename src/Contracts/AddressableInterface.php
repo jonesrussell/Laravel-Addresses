@@ -1,12 +1,12 @@
 <?php
 
-namespace Lecturize\Addresses\Contracts;
+namespace Jonesrussell\Addresses\Contracts;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 /**
  * Interface AddressableInterface
- * @package Lecturize\Addresses\Contracts
+ * @package Jonesrussell\Addresses\Contracts
  */
 interface AddressableInterface
 {

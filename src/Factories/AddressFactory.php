@@ -1,9 +1,9 @@
 <?php
 
-namespace Lecturize\Addresses\Factories;
+namespace Jonesrussell\Addresses\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Lecturize\Addresses\Models\Address;
+use Jonesrussell\Addresses\Models\Address;
 
 class AddressFactory extends Factory
 {

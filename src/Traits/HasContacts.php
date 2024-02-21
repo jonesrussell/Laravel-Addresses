@@ -1,6 +1,6 @@
 <?php
 
-namespace Lecturize\Addresses\Traits;
+namespace Jonesrussell\Addresses\Traits;
 
 use Exception;
 use Illuminate\Contracts\Validation\Validator;
@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Collection;
 
-use Lecturize\Addresses\Models\Contact;
-use Lecturize\Addresses\Exceptions\FailedValidationException;
+use Jonesrussell\Addresses\Models\Contact;
+use Jonesrussell\Addresses\Exceptions\FailedValidationException;
 
 /**
  * Class HasContacts
- * @package Lecturize\Addresses\Traits
+ * @package Jonesrussell\Addresses\Traits
  * @property Collection|Contact[]  $contacts
  */
 trait HasContacts

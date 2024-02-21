@@ -1,6 +1,6 @@
 <?php
 
-namespace Lecturize\Addresses\Tests;
+namespace Jonesrussell\Addresses\Tests;
 
 class DemoTest extends TestCase
 {

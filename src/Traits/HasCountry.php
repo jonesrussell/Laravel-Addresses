@@ -1,16 +1,16 @@
 <?php
 
-namespace Lecturize\Addresses\Traits;
+namespace Jonesrussell\Addresses\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-use Lecturize\Addresses\Models\Country;
+use Jonesrussell\Addresses\Models\Country;
 
 /**
  * Class HasCountry
- * @package Lecturize\Addresses\Traits;
+ * @package Jonesrussell\Addresses\Traits;
  *
  * @property int|null  $country_id
  * @property string    $country_code

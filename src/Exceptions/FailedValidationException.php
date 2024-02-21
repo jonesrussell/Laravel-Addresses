@@ -1,10 +1,10 @@
 <?php
 
-namespace Lecturize\Addresses\Exceptions;
+namespace Jonesrussell\Addresses\Exceptions;
 
 /**
  * Class FailedValidationException
- * @package Lecturize\Addresses\Exceptions
+ * @package Jonesrussell\Addresses\Exceptions
  */
 class FailedValidationException extends \Exception
 {

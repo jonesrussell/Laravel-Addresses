@@ -1,9 +1,9 @@
 <?php
 
-namespace Lecturize\Addresses\Factories;
+namespace Jonesrussell\Addresses\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Lecturize\Addresses\Models\Contact;
+use Jonesrussell\Addresses\Models\Contact;
 
 class ContactFactory extends Factory
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lecturize\Addresses\Models;
+namespace Jonesrussell\Addresses\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Lecturize\Addresses\Factories\AddressFactory;
-use Lecturize\Addresses\Factories\ContactFactory;
-use Lecturize\Addresses\Helpers\NameGenerator;
+use Jonesrussell\Addresses\Factories\AddressFactory;
+use Jonesrussell\Addresses\Factories\ContactFactory;
+use Jonesrussell\Addresses\Helpers\NameGenerator;
 
 /**
  * Class Contact
- * @package Lecturize\Addresses\Models
+ * @package Jonesrussell\Addresses\Models
  *
  * @property-read int          $id
  * @property-read string|null  $uuid

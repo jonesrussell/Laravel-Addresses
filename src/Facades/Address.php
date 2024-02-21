@@ -1,12 +1,12 @@
 <?php
 
-namespace Lecturize\Addresses\Facades;
+namespace Jonesrussell\Addresses\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Address
- * @package Lecturize\Addresses\Facades
+ * @package Jonesrussell\Addresses\Facades
  */
 class Address extends Facade
 {

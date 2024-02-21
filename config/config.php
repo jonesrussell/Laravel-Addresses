@@ -13,7 +13,7 @@ return [
         /*
          * The model used for addresses.
          */
-        'model' => \Lecturize\Addresses\Models\Address::class,
+        'model' => \Jonesrussell\Addresses\Models\Address::class,
 
         /*
          * Flag columns to be added to table.
@@ -54,7 +54,7 @@ return [
         /*
          * The model used for contacts.
          */
-        'model' => \Lecturize\Addresses\Models\Contact::class,
+        'model' => \Jonesrussell\Addresses\Models\Contact::class,
 
         /*
          * Flag columns to be added to table.

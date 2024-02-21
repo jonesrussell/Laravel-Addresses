@@ -1,10 +1,10 @@
 <?php
 
-namespace Lecturize\Addresses\Exceptions;
+namespace Jonesrussell\Addresses\Exceptions;
 
 /**
  * Class AddressNotFoundException
- * @package Lecturize\Addresses\Exceptions
+ * @package Jonesrussell\Addresses\Exceptions
  */
 class AddressNotFoundException extends \Exception
 {
