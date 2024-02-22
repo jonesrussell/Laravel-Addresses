@@ -171,7 +171,7 @@ trait HasAddresses
 
     function findCountryByCode(string $country_code): ?Country
     {
-        return Country::where('iso_3166_2', $country_code)
+        return Country::whereCountryCode($country_code)
             ->first();
     }
 }
