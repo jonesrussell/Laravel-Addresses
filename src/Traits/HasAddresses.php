@@ -59,7 +59,7 @@ trait HasAddresses
 
     public function getAddress(string $flag = null, string $direction = 'desc', bool $strict = false): ?Address
     {
-        if (! $this->hasAddresses()) {
+        if (!$this->hasAddresses()) {
             return null; // short circuit if no addresses exist
         }
 
@@ -105,9 +105,9 @@ trait HasAddresses
         /**
          * should the default fallback logic fail, try to get the first or last address
          */
-        if (! $address && $direction === 'DESC') {
+        if (!$address && $direction === 'DESC') {
             return $this->addresses()->first();
-        } elseif (! $address && $direction === 'ASC') {
+        } elseif (!$address && $direction === 'ASC') {
             return $this->addresses()->last();
         }
 
@@ -136,11 +136,11 @@ trait HasAddresses
     public function loadAddressAttributes(array $attributes): array
     {
         // return if no country given
-        if (! isset($attributes['country']))
+        if (!isset($attributes['country']))
             throw new FailedValidationException('[Addresses] No country code given.');
 
         // find country
-        if (! ($country = $this->findCountryByCode($attributes['country'])) || ! isset($country->id))
+        if (!($country = $this->findCountryByCode($attributes['country'])) || !isset($country->id))
             throw new FailedValidationException('[Addresses] Country not found, did you seed the countries table?');
 
         // unset country from attributes array
@@ -152,7 +152,7 @@ trait HasAddresses
 
         if ($validator->fails()) {
             $errors = $validator->errors()->all();
-            $error  = '[Addresses] '. implode(' ', $errors);
+            $error  = '[Addresses] ' . implode(' ', $errors);
 
             throw new FailedValidationException($error);
         }
@@ -171,7 +171,7 @@ trait HasAddresses
 
     function findCountryByCode(string $country_code): ?Country
     {
-        return Country::whereCountryCode($country_code)
-                      ->first();
+        return Country::where('iso_3166_2', $country_code)
+            ->first();
     }
 }
